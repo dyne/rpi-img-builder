@@ -65,7 +65,7 @@ Caching on:     # 1 to enable ccache
 Distribution
 Distro:		# Supported: debian, devuan and ubuntu
 Release:	# Debian: buster, bullseye, testing, unstable and sid
-		# Devuan: beowulf, testing, unstable and ceres
+		# Devuan: beowulf, chimaera, testing, unstable and ceres
 		# Ubuntu: focal and hirsute
 
 Filesystem
@@ -95,7 +95,7 @@ Caching on:     # 1 to enable ccache
 Distribution
 Distro:		# Supported: debian, devuan and ubuntu
 Release:	# Debian: buster, bullseye, testing, unstable and sid
-		# Devuan: beowulf, testing, unstable and ceres
+		# Devuan: beowulf, chimaera, testing, unstable and ceres
 		# Ubuntu: focal and hirsute
 
 Filesystem

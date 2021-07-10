@@ -16,6 +16,14 @@ case `grep -Fx 'DISTRO_VERSION="beowulf"' "userdata.txt" >/dev/null; echo $?` in
     source ccache.txt
     ;;
 esac
+case `grep -Fx 'DISTRO_VERSION="chimaera"' "userdata.txt" >/dev/null; echo $?` in
+  0)
+    echo NATIVE='"'/usr/lib/ccache/gcc-10'"' > ccache.txt
+    echo ARMV6_CROSS='"'/usr/lib/ccache/arm-linux-gnueabi-gcc-10'"' >> ccache.txt
+    echo ARM64_CROSS='"'/usr/lib/ccache/aarch64-linux-gnu-gcc-10'"' >> ccache.txt
+    source ccache.txt
+    ;;
+esac
 case `grep -Fx 'DISTRO_VERSION="bullseye"' "userdata.txt" >/dev/null; echo $?` in
   0)
     echo NATIVE='"'/usr/lib/ccache/gcc-10'"' > ccache.txt
