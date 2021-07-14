@@ -166,6 +166,34 @@ mainline:
 	@chmod +x ${XMAINLINE}
 	@${MAINLINE}
 
+# Raspberry Pi 2 | armhf
+rpi2-kernel:
+	# Linux | aarch64
+	@ echo bcm2710 > soc.txt
+	@chmod +x ${XLINUX}
+	@${LINUX}
+
+rpi2-image:
+	# Making bootable image
+	@ echo bcm2710 > soc.txt
+	@chmod +x ${CHOOSE}
+	@${CHOOSE}
+
+rpi2-all:
+	# RPi2/3 | aarch64
+	# - - - - - - - -
+	#
+	# Building linux
+	@ echo bcm2710 > soc.txt
+	@chmod +x ${XLINUX}
+	@${LINUX}
+	# Creating ROOTFS tarball
+	@chmod +x ${RFSV8}
+	@${ROOTFSV8}
+	# Making bootable image
+	@ echo bcm2710 > soc.txt
+	@chmod +x ${CHOOSE}
+
 # Raspberry Pi 2 / 3 | aarch64
 rpi3-kernel:
 	# Linux | aarch64
