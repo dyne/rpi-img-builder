@@ -92,8 +92,9 @@ apt -y clean
 apt -y autoclean
 
 # User options
-echo -n "raspberrypi" > /etc/hostname;
-sed -i "1 a 127.0.1.1	raspberrypi" /etc/hosts;
+HOSTNAME=${HOSTNAME:-'raspberrypi'}
+echo -n "${HOSTNAME}" > /etc/hostname;
+sed -i "1 a 127.0.1.1	${HOSTNAME}" /etc/hosts;
 if [ $useracct -eq 0 ]; then
 	echo "";
 	adduser ${USERNAME} --gecos ${NAME} --disabled-password
