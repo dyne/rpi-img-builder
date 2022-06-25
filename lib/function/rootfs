@@ -116,5 +116,6 @@ chroot ${ROOT} /debootstrap/debootstrap --second-stage
 run_devuan-debootstrap(){
 KEY="/usr/share/keyrings/devuan-archive-keyring.gpg"
 debootstrap --arch ${ARCH_EXT} --foreign --force-check-gpg --keyring=$KEY ${DISTRO_VERSION} ${ROOT} http://pkgmaster.devuan.org/merged
+ln -sr ${ROOT}/usr/sbin/groupadd ${ROOT}/usr/sbin/addgroup # on daedalus, cron-daemon-common_3.0pl1-144_all.deb burps without this!?!!
 chroot ${ROOT} /debootstrap/debootstrap --second-stage
 }
