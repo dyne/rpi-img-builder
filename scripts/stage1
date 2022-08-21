@@ -175,7 +175,7 @@ rmdir "${IMAGE_FOLDER}"
 rmdir p1 p2
 
 if [ $ext4 -eq 1 ]; then
-	if [ -z $shrink_suppress ]; then
+	if [ -z ${shrink_suppress+x} ]; then
 		ext4_shrink;
 	fi
 else
