@@ -85,7 +85,7 @@ fi
 if [ -f ${ROOT}/usr/bin/qemu-arm-static ]; then
 	rm -f ${ROOT}/usr/bin/qemu-arm-static
 fi
-rm -f ${ROOT}/var/cache/debconf/*
+rm -fr ${ROOT}/var/cache/debconf/*
 
 # finish
 echo
