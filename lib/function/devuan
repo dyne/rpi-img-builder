@@ -14,8 +14,12 @@ EOF
 
 unstable_sources(){
 rm -f ${RELEASE}
+UNSTABLE_EXTRA_REPO=""
+if [[ "$DISTRO_VERSION" == "daedalus" ]]; then
+	UNSTABLE_EXTRA_REPO="non-free-firmware";
+fi
 tee ${RELEASE} <<EOF
-deb http://deb.devuan.org/merged ${DISTRO_VERSION} main contrib non-free
+deb http://deb.devuan.org/merged ${DISTRO_VERSION} main contrib non-free ${UNSTABLE_EXTRA_REPO}
 EOF
 }
 
