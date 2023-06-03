@@ -252,7 +252,9 @@ echo "# DYNAMIC MOTD VARIABLES" > /etc/default/dynamic-motd
 echo "H_POS=-c" >> /etc/default/dynamic-motd
 echo "B_POS=-r" >> /etc/default/dynamic-motd
 echo "BRANDING=${BRANDING:-false}" >> /etc/default/dynamic-motd
-echo "DEFAULT_MOTD=\"${DEFAULT_MOTD}\"" >> /etc/default/dynamic-motd
+if [[ -n ${DEFAULT_MOTD} ]]; then
+        echo "DEFAULT_MOTD=\"${DEFAULT_MOTD}\"" >> /etc/default/dynamic-motd
+fi
 echo "T_FONT=small" >> /etc/default/dynamic-motd
 echo "T_FILTER=metal" >> /etc/default/dynamic-motd
 echo "MENUCONFIG=true" >> /etc/default/dynamic-motd
